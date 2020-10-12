@@ -10,6 +10,7 @@ public class FpsShooter : MonoBehaviour
    
     public Transform LHFirePoint, RHFirePoint;
 
+    [SerializeField] PhotonView myPhotonView;
     private bool isRightHand;
     private Vector3 destination;
 
@@ -20,7 +21,15 @@ public class FpsShooter : MonoBehaviour
     public float fireRateRC = 1;
     private float timeToFireRC;
 
-    
+
+    private void Start()
+    {
+        myPhotonView = GetComponent<PhotonView>();
+        if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            Destroy(this);
+        }
+    }
 
 
     // Update is called once per frame

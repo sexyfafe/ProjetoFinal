@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
 {
     private float lifetime = 2;
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter()
     {
         StartCoroutine(Die());
     }

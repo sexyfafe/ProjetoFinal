@@ -6,13 +6,11 @@ using System.IO;
 
 public class ProjectileTut : MonoBehaviour
 {
-    private bool collided = false;
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag != "projectile" && !collided)
+        Debug.Log("Bateu   " + collision.transform.tag);
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "projectile")
         {
-            collided = true;
-
             //Prefaf de explosao de impacto
             //GameObject impact = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Impact"), collision.contacts[0].point, transform.rotation, 0);
             //Destroy( impact , 2);
