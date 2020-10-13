@@ -75,6 +75,12 @@ public class FpsShooter : MonoBehaviour
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
         //iTween.PunchPosition (projectileObj, new Vector3(Random.Range(-arcRange , arcRange), Random.Range(-arcRange , arcRange), 0 ), Random.Range(0.5f , 2))
-        Destroy(projectileObj , timeToLiveRC);
+        StartCoroutine(DestroyAfterTime(timeToLiveRC , projectileObj));
+    }
+
+    private IEnumerator DestroyAfterTime(float time , GameObject projectileObj)
+    {
+        yield return new WaitForSeconds(time);
+        PhotonNetwork.Destroy(projectileObj);
     }
 }
