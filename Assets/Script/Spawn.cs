@@ -15,7 +15,14 @@ public class Spawn : MonoBehaviour
             Destroy(this);
     }
 
+
     void OnTriggerEnter()
+    {
+        myPhotonView.RPC("SpawnTimer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void SpawnTimer()
     {
         StartCoroutine(Die());
     }

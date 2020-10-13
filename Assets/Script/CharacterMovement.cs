@@ -25,7 +25,6 @@ public class CharacterMovement : MonoBehaviour
         {
             m_Camera.enabled = false;
             Destroy(this);
-            
         }
     }
 
