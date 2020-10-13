@@ -2662,7 +2662,7 @@ MonoBehaviour:
   LHFirePoint: {fileID: 8139777892941348877}
   RHFirePoint: {fileID: 8139777892941348877}
   myPhotonView: {fileID: 8139777893983796421}
-  projectileName: 
+  projectileName: Ice Throw
   projectile: {fileID: 3232406689541393265, guid: 1f82868df71480a4b9768fe892a30ff4,
     type: 3}
   timeToLiveRC: 4

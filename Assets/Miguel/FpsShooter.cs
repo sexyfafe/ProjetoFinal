@@ -70,8 +70,8 @@ public class FpsShooter : MonoBehaviour
 
     void InstantiateProjectile(Transform firePoint)
     {
-        //GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", projectile), firePoint.position, transform.rotation, 0 );
-        var projectileObj = Instantiate(projectile, firePoint.position, transform.rotation);
+        GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", projectileName), firePoint.position, transform.rotation, 0 );
+        //var projectileObj = Instantiate(projectile, firePoint.position, transform.rotation);
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
         //iTween.PunchPosition (projectileObj, new Vector3(Random.Range(-arcRange , arcRange), Random.Range(-arcRange , arcRange), 0 ), Random.Range(0.5f , 2))
