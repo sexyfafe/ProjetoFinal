@@ -34,7 +34,6 @@ public class player_controll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
@@ -49,9 +48,7 @@ public class player_controll : MonoBehaviour
 
         Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         Player.rotation = Quaternion.Euler(0, mouseX, 0);
-        
-
-
+       
     }
 
 }

@@ -16,28 +16,17 @@ public class player_controllTeste : MonoBehaviour
 
     void Start()
     {
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
         chest = anim.GetBoneTransform(HumanBodyBones.Chest);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         anim.SetFloat("vertical", Input.GetAxis("Vertical"));
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-
-        mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
-        if (mouseY- Input.GetAxis("Mouse Y") * rotationSpeed>-30&& mouseY - Input.GetAxis("Mouse Y") * rotationSpeed<30)
-        {
-            mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
-            anim.SetFloat("mouseY", mouseY);
-        }
-
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -46,12 +35,9 @@ public class player_controllTeste : MonoBehaviour
         else
         {
             anim.SetBool("Running", false);
-        }
+        } 
         Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
-        Player.rotation = Quaternion.Euler(0, mouseX, 0);
-        
-
-
+        Player.rotation = Quaternion.Euler(0, mouseX, 0); 
     }
     private void OnAnimatorIK()
     {

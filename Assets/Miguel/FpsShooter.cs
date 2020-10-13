@@ -13,8 +13,10 @@ public class FpsShooter : MonoBehaviour
     [SerializeField] PhotonView myPhotonView;
     private bool isRightHand;
     private Vector3 destination;
+    private Animator animator;
 
     //Right Click Ability
+    public string projectileName;
     public GameObject projectile;
     public float timeToLiveRC = 4;
     public float projectileSpeed = 30;
@@ -24,6 +26,8 @@ public class FpsShooter : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         myPhotonView = GetComponent<PhotonView>();
         if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
@@ -38,7 +42,7 @@ public class FpsShooter : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.time >= timeToFireRC)
         {
             timeToFireRC = Time.time + 1 / fireRateRC;
-            ShootProjectile();
+            animator.SetTrigger("RightClickAttack");
         }  
     }
 
@@ -66,7 +70,8 @@ public class FpsShooter : MonoBehaviour
 
     void InstantiateProjectile(Transform firePoint)
     {
-        GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Fireball"), firePoint.position, transform.rotation, 0 );
+        //GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", projectile), firePoint.position, transform.rotation, 0 );
+        var projectileObj = Instantiate(projectile, firePoint.position, transform.rotation);
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
         //iTween.PunchPosition (projectileObj, new Vector3(Random.Range(-arcRange , arcRange), Random.Range(-arcRange , arcRange), 0 ), Random.Range(0.5f , 2))
