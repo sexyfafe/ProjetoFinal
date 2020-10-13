@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
         myPhotonView = GetComponent<PhotonView>();
         if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
+            m_Camera.GetComponent<AudioListener>().enabled = false;
             m_Camera.enabled = false;
             Destroy(this);
         }
@@ -51,7 +52,5 @@ public class CharacterMovement : MonoBehaviour
         //Look at target IK
         anim.SetLookAtWeight(1);
         anim.SetLookAtPosition(targetTransform.position);
-
-
     }
 }
