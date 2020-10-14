@@ -6,15 +6,22 @@ using System.IO;
 
 public class ProjectileTut : MonoBehaviour
 {
+    private PhotonView myPhotonView;
+
+    private void Start()
+    {
+        myPhotonView = GetComponent<PhotonView>();
+    }
+
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "projectile")
+        if (collision.gameObject.tag != "projectile")
         {
             //Prefaf de explosao de impacto
             //GameObject impact = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Impact"), collision.contacts[0].point, transform.rotation, 0);
             //Destroy( impact , 2);
 
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

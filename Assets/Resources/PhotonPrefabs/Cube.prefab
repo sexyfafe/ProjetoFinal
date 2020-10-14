@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3401893857241454464}
   - component: {fileID: 3401893857241454465}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b179993d313c42aecd046c5da5849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPhotonView: {fileID: 0}
+  myPhotonView: {fileID: 3401893857241454464}
 --- !u!65 &3401893857241454471
 BoxCollider:
   m_ObjectHideFlags: 0

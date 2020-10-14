@@ -79,6 +79,6 @@ public class FpsShooter : MonoBehaviour
     private IEnumerator DestroyAfterTime(float time , GameObject projectileObj)
     {
         yield return new WaitForSeconds(time);
-        PhotonNetwork.Destroy(projectileObj);
+        Destroy(projectileObj);
     }
 }

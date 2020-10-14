@@ -11,14 +11,17 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         myPhotonView = GetComponent<PhotonView>();
-        if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
-            Destroy(this);
+        if (myPhotonView.IsMine)
+            Destroy(gameObject);
     }
 
 
     void OnTriggerEnter()
     {
-        myPhotonView.RPC("SpawnTimer", RpcTarget.All);
+        myPhotonView.RPC(
+            "SpawnTimer",
+            RpcTarget.AllViaServer
+            );
     }
 
     [PunRPC]
