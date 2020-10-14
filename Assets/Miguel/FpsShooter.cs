@@ -22,16 +22,16 @@ public class FpsShooter : MonoBehaviour
     public float fireRateRC = 1;
     private float timeToFireRC;
 
+    //Selected Gem
+    private Poderes selectedGem;
 
-    private void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
 
         myPhotonView = GetComponent<PhotonView>();
         if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
-        {
             Destroy(this);
-        }
     }
 
 
@@ -42,7 +42,7 @@ public class FpsShooter : MonoBehaviour
         {
             timeToFireRC = Time.time + 1 / fireRateRC;
             animator.SetTrigger("RightClickAttack");
-        }  
+        }
     }
 
     void ShootProjectile()
@@ -55,21 +55,25 @@ public class FpsShooter : MonoBehaviour
         else
             destination = ray.GetPoint(1000);
 
-        if(isRightHand)
+        if (selectedGem != null)
         {
-            isRightHand = false;
-            InstantiateProjectile(RHFirePoint);
+            if (isRightHand)
+            {
+                isRightHand = false;
+                InstantiateProjectile(RHFirePoint);
+            }
+            else
+            {
+                isRightHand = true;
+                InstantiateProjectile(LHFirePoint);
+            }
         }
-        else
-        {
-            isRightHand = true;
-            InstantiateProjectile(LHFirePoint);
-        }
+        
     }
 
     void InstantiateProjectile(Transform firePoint)
     {
-        GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", projectileName), firePoint.position, transform.rotation, 0 );
+        GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", selectedGem.GetBasicAttack()), firePoint.position, transform.rotation, 0 );
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
         //iTween.PunchPosition (projectileObj, new Vector3(Random.Range(-arcRange , arcRange), Random.Range(-arcRange , arcRange), 0 ), Random.Range(0.5f , 2))
@@ -80,5 +84,10 @@ public class FpsShooter : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(projectileObj);
+    }
+
+    public void SetGem(GameObject gem)
+    {
+        selectedGem = gem.GetComponent<Poderes>();
     }
 }
