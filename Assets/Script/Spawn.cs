@@ -11,8 +11,6 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         myPhotonView = GetComponent<PhotonView>();
-        if (myPhotonView.IsMine)
-            Destroy(gameObject);
     }
 
 
