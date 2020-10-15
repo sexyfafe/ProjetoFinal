@@ -19,10 +19,13 @@ public class CrystalMenu : MonoBehaviour
         Selected(true);
     }
 
-    void Fill()
+    public void Fill()
     {
-        primarySlot.GetComponent<Image>().sprite = crystalManager.primaryGem.GetComponent<Poderes>().powerImage;
-        secondarySlot.GetComponent<Image>().sprite = crystalManager.secondaryGem.GetComponent<Poderes>().powerImage;
+        if(crystalManager.primaryGem != null)
+            primarySlot.GetComponent<Image>().sprite = crystalManager.primaryGem.GetComponent<Poderes>().powerImage;
+
+        if (crystalManager.secondaryGem != null)
+            secondarySlot.GetComponent<Image>().sprite = crystalManager.secondaryGem.GetComponent<Poderes>().powerImage;
     }
 
     public void Selected(bool isFirst)
