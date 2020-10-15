@@ -14,7 +14,7 @@ public class PhotonViewDisable : MonoBehaviour
         myPhotonView = GetComponent<PhotonView>();
         if (myPhotonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
-            Destroy(this);
+            gameObject.SetActive(false);
         }
     }
 }

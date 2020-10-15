@@ -16,7 +16,6 @@ public class CrystalMenu : MonoBehaviour
         secondarySlot = transform.GetChild(1).gameObject;
 
         Fill();
-        Selected(true);
     }
 
     public void Fill()
