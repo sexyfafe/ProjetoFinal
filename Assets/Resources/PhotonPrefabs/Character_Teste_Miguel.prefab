@@ -5256,6 +5256,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6264562543326904652}
+  - component: {fileID: 2560503682023107028}
+  - component: {fileID: 4919128156273138198}
   m_Layer: 0
   m_Name: Player UI
   m_TagString: Untagged
@@ -5279,6 +5281,40 @@ Transform:
   m_Father: {fileID: 1654621854678573901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2560503682023107028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264562543326904653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4919128156273138198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264562543326904653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30ebc4f95118c0428e8af8a4085ba4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6264562544347362816
 GameObject:
   m_ObjectHideFlags: 0
@@ -5488,9 +5524,9 @@ RectTransform:
   m_Father: {fileID: 6264562544527068113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 67.46765, y: -50.07467}
   m_SizeDelta: {x: 93.77762, y: 81.12547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6264562544585099807
@@ -5637,9 +5673,9 @@ RectTransform:
   m_Father: {fileID: 6264562544527068113}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 202.40295, y: -50.07467}
   m_SizeDelta: {x: 93.77762, y: 81.12547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &165842165924217633
