@@ -11,7 +11,7 @@ public class PickupRequest : MonoBehaviour
 
     public void DestroyGroundGem()
     {
-        Destroy(selectedGem.gameObject);
+        selectedGem.gameObject.SetActive(false);
         selectedGem = null;
     }
 

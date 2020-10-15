@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1781507474915329852}
   - component: {fileID: 2998436091333911464}
   - component: {fileID: 2068957993564752522}
+  - component: {fileID: -8011324722835931198}
   m_Layer: 0
   m_Name: Ice Shard
-  m_TagString: Untagged
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _powerImage: {fileID: 21300000, guid: ca11561c970b3be40bdeb0938567e67b, type: 3}
+--- !u!65 &-8011324722835931198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5681343423856258381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7991298, y: 5.1938634, z: 1.6763482}
+  m_Center: {x: 0.0067140157, y: -1.6874675e-16, z: 0.023748998}
