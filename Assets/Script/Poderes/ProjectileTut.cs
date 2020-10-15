@@ -15,13 +15,16 @@ public class ProjectileTut : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag != "projectile")
+        if (myPhotonView.IsMine == true && PhotonNetwork.IsConnected == true)
         {
-            //Prefaf de explosao de impacto
-            //GameObject impact = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Impact"), collision.contacts[0].point, transform.rotation, 0);
-            //Destroy( impact , 2);
+            if (collision.gameObject.tag != "projectile")
+            {
+                //Prefaf de explosao de impacto
+                //GameObject impact = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Impact"), collision.contacts[0].point, transform.rotation, 0);
+                //Destroy( impact , 2);
 
-            PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 }
