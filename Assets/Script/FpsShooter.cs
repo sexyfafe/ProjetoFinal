@@ -30,6 +30,7 @@ public class FpsShooter : MonoBehaviour
         animator = GetComponent<Animator>();
 
         myPhotonView = GetComponent<PhotonView>();
+
     }
 
 
@@ -73,6 +74,7 @@ public class FpsShooter : MonoBehaviour
                 }
             }
         }
+
     }
 
     void InstantiateProjectile(Transform firePoint)
@@ -90,8 +92,7 @@ public class FpsShooter : MonoBehaviour
     private IEnumerator DestroyAfterTime(float time, GameObject projectileObj)
     {
         yield return new WaitForSeconds(time);
-        if(projectileObj != null)
-            PhotonNetwork.Destroy(projectileObj);
+        Destroy(projectileObj);
     }
 
     public void SetGem(GameObject gem)

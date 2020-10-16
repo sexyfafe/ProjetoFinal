@@ -11,7 +11,6 @@ public class Ice : MonoBehaviour, Poderes
     public Sprite _powerImage;   
     public Sprite powerImage => _powerImage;
 
-
     public string[] powers {
         get {
             return new string[2] { powerBasic, powerMedium };
@@ -22,4 +21,6 @@ public class Ice : MonoBehaviour, Poderes
     {
         return this.powers[0]; 
     }
+
+
 }

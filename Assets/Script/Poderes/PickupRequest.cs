@@ -7,7 +7,7 @@ public class PickupRequest : MonoBehaviour
 {
     public CrystalManager crystalManager;
 
-    private GameObject selectedGem = null;
+    private GameObject selectedGem;
 
     public void DestroyGroundGem()
     {
