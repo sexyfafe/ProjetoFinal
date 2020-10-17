@@ -4569,6 +4569,7 @@ GameObject:
   - component: {fileID: 8722413593067350523}
   - component: {fileID: 1906458434168061210}
   - component: {fileID: 5211681181856275396}
+  - component: {fileID: -4352945941070340087}
   m_Layer: 0
   m_Name: Character_Teste_Miguel
   m_TagString: Untagged
@@ -4782,6 +4783,18 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &-4352945941070340087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654621854678573893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5636e34f263b3e4f86171b2e18afc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654621854679887443
 GameObject:
   m_ObjectHideFlags: 0

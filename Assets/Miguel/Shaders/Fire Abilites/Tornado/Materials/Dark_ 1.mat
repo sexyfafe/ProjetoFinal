@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fire
+  m_Name: Dark_ 1
   m_Shader: {fileID: -6465566751694194690, guid: dd9b331066065664ebc1506f7a6b389a,
     type: 3}
   m_ShaderKeywords: 
@@ -21,9 +21,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_32208E75: 20.6
-    - Vector1_E63D9F47: 0.559
+    - Vector1_32208E75: 22.74
+    - Vector1_E63D9F47: 0.382
     m_Colors:
-    - Color_51D880AD: {r: 4.768628, g: 1.6279408, b: 0.82389903, a: 0}
+    - Color_51D880AD: {r: 0.5377358, g: 0.4895425, b: 0.4895425, a: 0}
     - Vector2_391EAC6: {r: 1, g: 1, b: 0, a: 0}
-    - Vector2_52381A00: {r: 0.15, g: -2.1, b: 0, a: 0}
+    - Vector2_52381A00: {r: -0.5, g: 0, b: 0, a: 0}

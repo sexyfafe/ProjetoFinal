@@ -38,13 +38,28 @@ public class FpsShooter : MonoBehaviour
     {
         if (myPhotonView.IsMine == true && PhotonNetwork.IsConnected == true)
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= timeToFireRC)
+            if (Input.GetButtonDown("Fire1") && Time.time >= timeToFireRC && selectedGem != null)
             {
                 timeToFireRC = Time.time + 1 / fireRateRC;
                 animator.SetTrigger("RightClickAttack");
             }
+            else if (Input.GetKeyDown(KeyCode.E) && selectedGem != null)
+            {
+                MediumAttack();
+            }
         }
+    }
 
+    void MediumAttack()
+    {
+        Spell mediumSpell = selectedGem.GetMediumAttack();
+
+        Debug.Log(mediumSpell.GetSpellPosition());
+        Vector3 spawnPostion = transform.position + transform.forward * mediumSpell.GetSpellPosition();
+
+        GameObject mediumAttack = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", mediumSpell.GetSpellString()), spawnPostion, Quaternion.identity, 0);
+
+        StartCoroutine(DestroyAfterTime(mediumAttack.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length, mediumAttack));
     }
 
     void ShootProjectile()
@@ -81,6 +96,9 @@ public class FpsShooter : MonoBehaviour
         {
             GameObject projectileObj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", selectedGem.GetBasicAttack()), firePoint.position, transform.rotation, 0);
             projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
+
+            if(selectedGem.basicAttack_Cast != "")
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", selectedGem.basicAttack_Cast), firePoint.position, transform.rotation, 0);
 
             //iTween.PunchPosition (projectileObj, new Vector3(Random.Range(-arcRange , arcRange), Random.Range(-arcRange , arcRange), 0 ), Random.Range(0.5f , 2))
             StartCoroutine(DestroyAfterTime(timeToLiveRC, projectileObj));

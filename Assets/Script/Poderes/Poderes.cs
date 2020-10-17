@@ -7,8 +7,11 @@ interface Poderes
 {
     Sprite powerImage { get; }
 
-    string[] powers { get; }
+    Spell[] powers { get; }
+    string basicAttack_Cast { get; }
 
     string GetBasicAttack();
+
+    Spell GetMediumAttack();
 
 }

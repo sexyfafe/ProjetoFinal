@@ -92,4 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c57c7db86cf554388b43b2b17e4558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _basicAttack_PS: {fileID: 1602186089414549540, guid: c4dc103761d4efe42b311244c7580e5f,
+    type: 3}
   _powerImage: {fileID: 21300000, guid: ecd56ee332295a440976b28140b7dff2, type: 3}
